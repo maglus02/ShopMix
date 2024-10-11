@@ -1,0 +1,36 @@
+.successContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #F5EFFF;
+}
+
+.successTitle {
+    font-size: 36px;
+    color: #A594F9;
+    margin-bottom: 16px;
+}
+
+.successMessage {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.returnButton {
+    background-color: #A594F9;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.returnButton:hover {
+    background-color: #8b81e3;
+}

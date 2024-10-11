@@ -1,0 +1,65 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.appContainer {
+    background-color: #F5EFFF;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: #A594F9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    background-color: #CDC1FF;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    background-color: #fff;
+    border: 1px solid #CDC1FF;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #A594F9;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,22 @@
+.cartContainer {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+}
+
+.cartImage {
+    width: 30px;
+    height: auto;
+    float: right;
+}
+
+.cartCount {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #A594F9;
+    border-radius: 50%;
+    padding: 2px 9px;
+    color: white;
+    font-size: 12px;
+}
