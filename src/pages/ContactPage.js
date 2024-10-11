@@ -9,6 +9,7 @@ const ContactPage = () => {
     body: '',
   });
   const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -29,6 +30,8 @@ const ContactPage = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
+      setErrors({});
+      setIsSubmitted(true);
       console.log('Form Data:', formData);
     }
   };
@@ -36,45 +39,49 @@ const ContactPage = () => {
   return (
     <div className={styles.container}>
       <h1>Contact Us</h1>
-      <form onSubmit={handleSubmit} className={styles.contactForm}>
-        <input
-          className={styles.inputField}
-          name="fullName"
-          placeholder="Full Name"
-          value={formData.fullName}
-          onChange={handleChange}
-        />
-        {errors.fullName && <p className={styles.errorText}>{errors.fullName}</p>}
+      {isSubmitted ? (
+        <p className={styles.thankYouMessage}>Thanks for contacting us!</p>
+      ) : (
+        <form onSubmit={handleSubmit} className={styles.contactForm}>
+          <input
+            className={styles.inputField}
+            name="fullName"
+            placeholder="Full Name"
+            value={formData.fullName}
+            onChange={handleChange}
+          />
+          {errors.fullName && <p className={styles.errorText}>{errors.fullName}</p>}
 
-        <input
-          className={styles.inputField}
-          name="subject"
-          placeholder="Subject"
-          value={formData.subject}
-          onChange={handleChange}
-        />
-        {errors.subject && <p className={styles.errorText}>{errors.subject}</p>}
+          <input
+            className={styles.inputField}
+            name="subject"
+            placeholder="Subject"
+            value={formData.subject}
+            onChange={handleChange}
+          />
+          {errors.subject && <p className={styles.errorText}>{errors.subject}</p>}
 
-        <input
-          className={styles.inputField}
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        {errors.email && <p className={styles.errorText}>{errors.email}</p>}
+          <input
+            className={styles.inputField}
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          {errors.email && <p className={styles.errorText}>{errors.email}</p>}
 
-        <textarea
-          className={styles.inputField}
-          name="body"
-          placeholder="Message"
-          value={formData.body}
-          onChange={handleChange}
-        />
-        {errors.body && <p className={styles.errorText}>{errors.body}</p>}
+          <textarea
+            className={styles.inputField}
+            name="body"
+            placeholder="Message"
+            value={formData.body}
+            onChange={handleChange}
+          />
+          {errors.body && <p className={styles.errorText}>{errors.body}</p>}
 
-        <button className={styles.sendMsg} type="submit">Send Message</button>
-      </form>
+          <button className={styles.sendMsg} type="submit">Send Message</button>
+        </form>
+      )}
     </div>
   );
 };
