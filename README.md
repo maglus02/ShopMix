@@ -1,4 +1,4 @@
-# ShopMix
+# JavaScript Frameworks CA
 
 ![ShopMix Homepage](https://i.imgur.com/HQvNHoN.png)
 
